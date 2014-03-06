@@ -1,3 +1,8 @@
 LineStamp::Application.routes.draw do
-  root :to => "home#index"
+  namespace :api, defaults: {format: :json} do
+    devise_for :users
+    resources :users
+    resources :projects
+  end
+  root :to => "home#index" 
 end

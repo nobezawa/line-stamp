@@ -11,10 +11,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: line-stamp_development
+  database: line_stamp_db
   pool: 5
-  username: root
-  password:
+  username: line_stamp
+  password: line_stamp
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and

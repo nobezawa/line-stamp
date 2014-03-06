@@ -28,7 +28,9 @@ group :test, :development do
   gem 'debugger'
 end
 
-
+gem 'rails-backbone'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'twitter'
 gem 'figaro'
