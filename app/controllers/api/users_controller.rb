@@ -3,6 +3,7 @@ class Api::UsersController < Api::BaseController
   
   def index
     @users = User.all
+    render :json => {result: @users}
   end
 
   def show
@@ -17,7 +18,7 @@ class Api::UsersController < Api::BaseController
     if @user.save
       render :json => User.all
     else
-      
+        
     end
   end
 
