@@ -4,5 +4,6 @@ LineStamp::Application.routes.draw do
     resources :users
     resources :projects
   end
+  resources :users
   root :to => "home#index" 
 end
