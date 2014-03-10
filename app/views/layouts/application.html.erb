@@ -83,7 +83,7 @@
         <ul class="nav nav-tabs nav-stacked main-menu">
           <li class="nav-header hidden-tablet">Main</li>
           <li><a class="ajax-link" href="/"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-          <li><a class="ajax-link" href="users"><i class="icon-eye-open"></i><span class="hidden-tablet"> User</span></a></li>        
+          <li><a class="ajax-link" href="/users"><i class="icon-eye-open"></i><span class="hidden-tablet"> User</span></a></li>        
         </ul>
         
       </div><!--/.well -->
@@ -96,8 +96,9 @@
         <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
       </div>
     </noscript>
-<%= yield %>
-       
+  <div id="content" class="span10">
+  <%= yield %>
+  </div>
 
       
       
