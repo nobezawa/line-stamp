@@ -1,5 +1,5 @@
 class Api::UsersController < Api::BaseController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
   
   def index
     @users = User.all
@@ -7,26 +7,18 @@ class Api::UsersController < Api::BaseController
   end
 
   def show
-  end
-
-  def new
-    @user = User.new
+    render :json => {result: @user}
   end
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      render :json => User.all
+    if @user.save!
+      render :json => {result: User.all}
     else
-        
+      
     end
   end
 
-
-  def edit
-  end
-
-  
   def update
   end
 
@@ -38,11 +30,11 @@ class Api::UsersController < Api::BaseController
   private
 
     def set_user
-      @shop = Shop.find(params[:id])
+      @user = User.find(params[:id])
     end
 
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :name, :password)
     end
 
   
