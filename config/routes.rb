@@ -4,6 +4,11 @@ LineStamp::Application.routes.draw do
     resources :users
     resources :projects
   end
+  
+  namespace :admin do
+    resources :users
+  end
+  
   resources :users
   root :to => "home#index" 
 end
