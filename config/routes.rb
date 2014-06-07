@@ -10,5 +10,6 @@ LineStamp::Application.routes.draw do
   end
   
   resources :users
+  devise_for :users
   root :to => "home#index" 
 end
