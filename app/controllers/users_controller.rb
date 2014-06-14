@@ -1,4 +1,5 @@
 class UsersController < FrontController
+  before_action :authenticate_user!
   before_action :get_user_admin
   #before_filter :authenticate_user!, only: [:index, :show]
   

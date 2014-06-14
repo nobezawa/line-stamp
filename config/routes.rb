@@ -9,7 +9,8 @@ LineStamp::Application.routes.draw do
     resources :users
   end
   
+
+  devise_for :users, :path => "user", only: [:sign_in, :sign_out, :session, :password]
   resources :users
-  devise_for :users
   root :to => "home#index" 
 end
