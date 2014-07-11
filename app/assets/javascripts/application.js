@@ -11,10 +11,4 @@
 // about supported directives.
 //
 //= require jquery
-//= require ./jquery-ui-1.8.21.custom.min.js
-//= require ./bootstrap-tooltip.js
-//= json2/json2
-//= underscore/underscore-min
-//= backbone/backbone-min
-//= require_tree ./lib
-//= require_tree ./charisma
+//= require jquery_ujs 

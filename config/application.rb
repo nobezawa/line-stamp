@@ -21,6 +21,9 @@ module LineStamp
     # config.i18n.default_locale = :de
     config.i18n.default_locale = :ja
     config.exceptions_app = self.routes
+    config.to_prepare do
+      Devise::SessionsController.layout "main"
+    end
     
   end
 end
