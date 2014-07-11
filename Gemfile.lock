@@ -238,6 +238,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  binding_of_caller
   coffee-rails (~> 4.0.0)
   debugger
   devise (= 3.2.4)

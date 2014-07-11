@@ -14,7 +14,11 @@
 
 <body>
   <header class="global-header">
-    <p class="masthead">jHC Study</p>
+    <% if user_signed_in? %>
+      <p class="masthead">ログアウト</p>
+    <% else %>
+      <p class="masthead"><%= link_to "ログイン", new_user_session_path %></p>
+    <% end %>
     <h1>Line Stamp</h1>
   </header><!-- /header -->
 

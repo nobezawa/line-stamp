@@ -31,4 +31,6 @@ LineStamp::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  # BetterErrors
+  BetterErrors::Middleware.allow_ip! ENV['10.4.179.1'] if ENV['10.4.179.1']
 end

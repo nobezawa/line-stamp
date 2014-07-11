@@ -19,7 +19,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test, :development do
+group :development do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-stack_explorer'
@@ -29,6 +29,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'debugger'
   gem "better_errors"
+  gem 'binding_of_caller'
 end
 
 gem 'omniauth'
