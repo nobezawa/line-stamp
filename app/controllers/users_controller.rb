@@ -23,6 +23,17 @@ class UsersController < FrontController
     end
   end
 
+  def project
+    @project = Project.new
+
+  end
+
+  def create_project
+  end
+
+  def upload
+  end
+
 
   def edit
   end

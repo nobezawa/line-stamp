@@ -1,0 +1,16 @@
+<h2>Create Project</h2>
+
+<%= form_for(@project, :url => {:action => 'create_project'}) do |f| %>
+<table>
+  <tr>
+    <th>title</th>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr>
+    <th>summary</th>
+    <td><%= f.text_area :summary %></td>
+  </tr>
+
+</table>
+<p><%= f.submit %></p>
+<% end %>
