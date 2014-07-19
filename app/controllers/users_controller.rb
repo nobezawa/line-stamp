@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class UsersController < FrontController
   before_action :authenticate_user!
   before_action :get_user_admin
@@ -25,13 +26,20 @@ class UsersController < FrontController
 
   def project
     @project = Project.new
-
   end
 
   def create_project
+    @project = Project.new(project_params)
+    # USER_IDをセットする
+    @project.user_id = @me.id
+
+    if @project.save!
+      redirect_to :action => "index"
+    end
   end
 
   def upload
+    @projects = Project.where(:user_id => @me.id)
   end
 
 
@@ -59,6 +67,10 @@ class UsersController < FrontController
 
     def user_params
       params.require(:user).permit(:email, :name, :password)
+    end
+
+    def project_params
+      params.require(:project).permit(:project_type_id, :title, :summary)
     end
 
     def get_user_admin

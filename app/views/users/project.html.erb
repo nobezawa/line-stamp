@@ -3,6 +3,10 @@
 <%= form_for(@project, :url => {:action => 'create_project'}) do |f| %>
 <table>
   <tr>
+    <th>project_type</th>
+    <td><%= f.text_field :project_type_id %></td>
+  </tr>
+  <tr>
     <th>title</th>
     <td><%= f.text_field :title %></td>
   </tr>
