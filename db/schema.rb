@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140712085801) do
+ActiveRecord::Schema.define(version: 20140719105853) do
+
+  create_table "project_images", force: true do |t|
+    t.integer  "project_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_images", ["project_id"], name: "index_project_images_on_project_id", using: :btree
 
   create_table "project_types", force: true do |t|
     t.string   "category_name"

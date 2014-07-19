@@ -1,4 +1,6 @@
 LineStamp::Application.routes.draw do
+  resources :project_images
+
   root :to => "home#index"
   
   namespace :api, defaults: {format: :json} do
