@@ -1,1 +1,24 @@
 <h1>作品投稿</h1>
+<div class="uploadArea">
+<%= form_for(@project, :url => {:action => 'create_project'}, :html => {:multipart => true}) do |f| %>
+
+<table>
+  <tr>
+    <th>project_type</th>
+    <td><%= f.text_field :project_type_id %></td>
+  </tr>
+  <tr>
+    <th>title</th>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr>
+    <th>summary</th>
+    <td><%= f.text_area :summary %></td>
+  </tr>
+</table>
+<%= f.fields_for :project_images do |i| %>
+  <p><%= i.file_field :image, :multiple => true, name: "project_images[image][]" %></p>
+<% end %>
+<p><%= f.submit %></p>
+<% end %>
+</div>

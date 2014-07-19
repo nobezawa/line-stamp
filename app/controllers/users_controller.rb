@@ -39,7 +39,8 @@ class UsersController < FrontController
   end
 
   def upload
-    @projects = Project.where(:user_id => @me.id)
+    @project = Project.new
+    @project_images = @project.project_images.build
   end
 
 
