@@ -34,6 +34,9 @@ class UsersController < FrontController
     @project.user_id = @me.id
 
     if @project.save!
+      params[:project_images][:image].each do |a|
+        @project_images = @project.project_images.create!(:image => a, :project_id => @project.id)
+      end
       redirect_to :action => "index"
     end
   end
@@ -71,7 +74,7 @@ class UsersController < FrontController
     end
 
     def project_params
-      params.require(:project).permit(:project_type_id, :title, :summary)
+      params.require(:project).permit(:project_type_id, :title, :summary, project_images_attributes:[:id,:project_id , :images])
     end
 
     def get_user_admin
